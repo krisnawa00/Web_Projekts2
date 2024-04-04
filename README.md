@@ -15,14 +15,14 @@
 
 ## Vietnes
 - Projekts: [http://localhost/](http://localhost/)
-- Datubāzes administrācija: [http://localhost:8080/](http://localhost:8080/?server=pd2-mysql&username=pd2admin&db=pd2)
+- Datubāzes administrācija: [http://localhost:8080/](http://localhost:8080/)
 
 
 ## DB rekvizīti
-- Server: `pd2-mysql`
+- Server: `pd2-database`
 - Username: `pd2admin`
 - Password: `pd2pass`
 
 ---
 
-K. Immers, VeA, 2023
+K. Immers, VeA, 2024

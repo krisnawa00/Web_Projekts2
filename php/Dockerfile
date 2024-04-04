@@ -1,11 +1,10 @@
 
-FROM php:8.2-fpm
+FROM php:8.3-fpm
 
 # Use the default configuration
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 # configure
-RUN sed -ri -e 's/;date.timezone =/date.timezone = "Europe\/Riga"/' "$PHP_INI_DIR/php.ini"
 
 # Install PHP modules
 RUN apt-get update \
