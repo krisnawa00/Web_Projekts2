@@ -3,6 +3,30 @@
 
 Šis repo paredzēts tiem, kas zina, kas ir PD2.
 
+## Instalācija
+
+docker compose build
+docker compose up -d
+docker exec -it bootcamp-laravel bash
+
+composer create-project laravel/laravel .
+
+chown -R www-data:www-data storage
+chown -R www-data:www-data bootstrap/cache
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+
+.env:
+DB_CONNECTION=mariadb
+DB_HOST=bootcamp-database
+DB_PORT=3306
+DB_DATABASE=bootcamp
+DB_USERNAME=bootcampadmin
+DB_PASSWORD=bootcamppass
+
+php artisan migrate
+
+http://localhost/
 
 ## Docker komandas
 - Konteineru būvēšana: `docker compose build`
