@@ -7,7 +7,7 @@
 
 docker compose build
 docker compose up -d
-docker exec -it bootcamp-laravel bash
+docker exec -it pd2-laravel bash
 
 composer create-project laravel/laravel .
 
@@ -18,11 +18,11 @@ chmod -R 775 bootstrap/cache
 
 .env:
 DB_CONNECTION=mariadb
-DB_HOST=bootcamp-database
+DB_HOST=pd2-database
 DB_PORT=3306
-DB_DATABASE=bootcamp
-DB_USERNAME=bootcampadmin
-DB_PASSWORD=bootcamppass
+DB_DATABASE=pd2
+DB_USERNAME=pd2admin
+DB_PASSWORD=pd2pass
 
 php artisan migrate
 
