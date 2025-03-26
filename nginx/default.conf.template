@@ -1,5 +1,5 @@
 
-# https://laravel.com/docs/11.x/deployment#nginx
+# https://laravel.com/docs/12.x/deployment#nginx
 
 server {
     listen ${SERVER_PORT};
@@ -23,10 +23,11 @@ server {
 
     error_page 404 /index.php;
 
-    location ~ \.php$ {
+    location ~ ^/index\.php(/|$) {
         fastcgi_pass ${PHP_CONTAINER_NAME}:9000;
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
+        fastcgi_hide_header X-Powered-By;
     }
 
     location ~ /\.(?!well-known).* {
