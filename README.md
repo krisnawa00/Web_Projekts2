@@ -21,7 +21,7 @@ chmod -R 775 bootstrap/cache
 .env:
 DB_CONNECTION=mariadb
 DB_HOST=project2-database
-DB_PORT=3308
+DB_PORT=3306
 DB_DATABASE=project2
 DB_USERNAME=project2admin
 DB_PASSWORD=project2pass
@@ -74,7 +74,7 @@ chmod -R 775 bootstrap/cache
 .env:
 DB_CONNECTION=mariadb
 DB_HOST=project2-database
-DB_PORT=3308
+DB_PORT=3306
 DB_DATABASE=project2
 DB_USERNAME=project2admin
 DB_PASSWORD=project2pass
