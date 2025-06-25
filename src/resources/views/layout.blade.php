@@ -29,9 +29,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Sākumlapa</a>
                 </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/games">Spēles</a>
+        </li>
+
+        <li class="nav-item">
+ <a class="nav-link" href="/genres">Žanri</a>
+</li>
+
+            @if(Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="/develepors">Develepors</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Beigt darbu</a>
+                    </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Autentificēties</a>
+                </li>
+            @endif
+
+                
             </ul>
         </div>
     </div>

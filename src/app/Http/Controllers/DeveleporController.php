@@ -6,9 +6,25 @@ use App\Models\Develepor;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
-class DeveleporController extends Controller
+
+class DeveleporController extends Controller implements HasMiddleware
 {
+
+
+/**
+* Get the middleware that should be assigned to the controller.
+*/
+public static function middleware(): array
+{
+return [
+'auth',
+];
+}
+
+
+
     public function list(): View
     {
         
@@ -43,7 +59,7 @@ class DeveleporController extends Controller
     return redirect('/develepors');
     }
 
-    public function update(Develepor $develepor): View
+    public function update(Develepor $develepor): View 
 {
  return view(
  'develepor.form',
