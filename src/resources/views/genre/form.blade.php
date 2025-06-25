@@ -25,28 +25,6 @@
         </div>
 
         <div class="mb-3">
-            <label for="genre-game" class="form-label">Spēle</label>
-            <select
-                id="genre-game"
-                name="game_id"
-                class="form-select @error('game_id') is-invalid @enderror"
-            >
-                <option value="">Norādiet spēli!</option>
-                @foreach($games as $game)
-                    <option
-                        value="{{ $game->id }}"
-                        @if ($game->id == old('game_id', $genre->game->id ?? false)) selected @endif
-                    >
-                        {{ $game->title }}
-                    </option>
-                @endforeach
-            </select>
-            @error('game_id')
-                <p class="invalid-feedback">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-3">
             <label for="genre-description" class="form-label">Apraksts</label>
             <textarea
                 id="genre-description"

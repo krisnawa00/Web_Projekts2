@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Genre;
-use App\Models\Game;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controllers\HasMiddleware;
@@ -22,17 +21,16 @@ class GenreController extends Controller implements HasMiddleware
         $items = Genre::orderBy('name', 'asc')->get();
         return view('genre.list', [
             'title' => 'Žanri',
-            'items' => $items
+            'items' => $items,
         ]);
     }
 
     public function create(): View
     {
-        $games = Game::orderBy('title', 'asc')->get();
+        // No games to load
         return view('genre.form', [
             'title' => 'Pievienot žanru',
             'genre' => new Genre(),
-            'games' => $games,
         ]);
     }
 
@@ -42,7 +40,7 @@ class GenreController extends Controller implements HasMiddleware
 
         $genre->fill([
             'name' => $validatedData['name'],
-            'game_id' => $validatedData['game_id'],
+            // 'game_id' removed
             'description' => $validatedData['description'] ?? null,
             'is_active' => (bool) ($validatedData['is_active'] ?? false),
         ]);
@@ -52,11 +50,10 @@ class GenreController extends Controller implements HasMiddleware
 
     public function update(Genre $genre): View
     {
-        $games = Game::orderBy('title', 'asc')->get();
+        // No games to load
         return view('genre.form', [
             'title' => 'Rediģēt žanru',
             'genre' => $genre,
-            'games' => $games,
         ]);
     }
 
@@ -94,7 +91,7 @@ class GenreController extends Controller implements HasMiddleware
     {
         return [
             'name' => 'nosaukums',
-            'game_id' => 'spēle',
+            // 'game_id' removed
             'description' => 'apraksts',
             'is_active' => 'aktīvs',
         ];
