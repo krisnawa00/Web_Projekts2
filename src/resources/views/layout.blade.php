@@ -61,7 +61,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                K. Immers, 2025
+                Kristers Rudzītis, 2025
             </div>
         </div>
     </div>
